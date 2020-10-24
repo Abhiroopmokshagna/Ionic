@@ -4,6 +4,11 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import { HomePage } from './home/home.page'
+import { AboutPage } from './about/about.page';
+import { MenuPage } from './menu/menu.page';
+import { ContactPage } from './contact/contact.page';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -41,6 +46,26 @@ export class AppComponent implements OnInit {
       title: 'Spam',
       url: '/folder/Spam',
       icon: 'warning'
+    },
+    {
+      title: 'Home',
+      url: '/home/',
+      icon: 'home'
+    },
+    {
+      title: 'About',
+      url: '/about/',
+      icon: 'information-circle'
+    },
+    {
+      title: 'Menu',
+      url: '/menu/',
+      icon: 'menu'
+    },
+    {
+      title: 'Contact',
+      url: '/contact/',
+      icon: 'call'
     }
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
