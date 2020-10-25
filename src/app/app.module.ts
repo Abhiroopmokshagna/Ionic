@@ -14,6 +14,13 @@ import { AboutPage } from './about/about.page';
 import { MenuPage } from './menu/menu.page';
 import { ContactPage } from './contact/contact.page';
 
+import { DishService } from './services/dish.service';
+import { LeaderService } from './services/leader.service';
+import { PromotionService } from './services/promotion.service';
+import { ProcessHttpmsgService } from './services/process-httpmsg.service';
+
+import { HttpClientModule } from '@angular/common/http';
+import { baseURL } from './shared/baseurl';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,12 +38,18 @@ import { ContactPage } from './contact/contact.page';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    DishService,
+    LeaderService,
+    PromotionService,
+    ProcessHttpmsgService,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+    { provide: 'BaseURL', useValue: baseURL}
   ],
   bootstrap: [AppComponent]
 })
